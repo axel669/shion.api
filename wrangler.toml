@@ -1,0 +1,9 @@
+name = "shion-api"
+compatibility_date = "2024-06-03"
+main = "build/worker.js"
+
+workers_dev = false
+route = { pattern = "shion-api.axel669.net/*", zone = "axel669.net" }
+
+[build]
+command = "pnpm run bundle"

@@ -21,4 +21,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           wranglerVersion: "3.69.0"
-          command: deploy --env ${{ env.GITHUB_REF_NAME }}
+          command: deploy --env ${{ github.ref_name }}

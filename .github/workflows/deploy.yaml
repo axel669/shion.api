@@ -1,4 +1,4 @@
-name: "Deploy [${{ env.GITHUB_REF_NAME }}]"
+name: "Deploy"
 
 on:
   push:

@@ -1,0 +1,24 @@
+name: "Deploy [${{ env.GITHUB_REF_NAME }}]"
+
+on:
+  push:
+    branches:
+    - dev
+    - live
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 8
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          wranglerVersion: "3.69.0"
+          command: deploy --environment production ${{ env.GITHUB_REF_NAME }}

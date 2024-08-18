@@ -132,3 +132,7 @@ dist
 .dev.vars
 
 build/
+
+.wrangler/
+
+.vscode/
